@@ -21,7 +21,8 @@ public class MyActivity extends Activity
 		// デバッグ用タグ
 		private static final String TAG = MyActivity.class.getSimpleName();
 
-		private static final String COMMAND = "メモ開始";
+		private static final String COMMAND_START = "メモ開始";
+		private static final String COMMAND_EXIT = "メモ終了";
 
 		// どのIntentからstartActivityForResultが呼び出されたのかを判断するため
 		private static final int REQUEST_CODE = 1;
@@ -72,9 +73,14 @@ public class MyActivity extends Activity
 
 						for (int i = 0; i < results.size(); i++)
 							{
-								if (results.get(i) == COMMAND)
+								if (results.get(i) == COMMAND_START)
 									{
 										Log.d(TAG, "COMMAND");
+										break;
+									}
+								else if (results.get(i) == COMMAND_EXIT)
+									{
+										Log.d(TAG, "COMMAND_EXIT");
 										break;
 									}
 							}

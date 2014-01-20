@@ -8,5 +8,8 @@
   -->
 
 <resources>
-    <string name="app_name">MemoInOfuton</string>
+    <string name="app_name">メモ in お布団</string>
+    <string name="description">説明文</string>
+    <string name="start_memo">メモ開始</string>
+    <string name="memo_list">メモリスト</string>
 </resources>
