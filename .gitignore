@@ -1,0 +1,34 @@
+# build application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+#bin/
+#gen/
+#build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# IDEA Ignores
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Ignore gradle files
+#.gradle/
+#gradle/
+#gradle.properties
+#gradlew
+#gradlew.bat
+#settings.gradle
+#build.gradle
+
+#proguard-rules.txt
