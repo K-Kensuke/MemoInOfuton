@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2014. Kensuke Kousaka
+ *
+ * This software is released under the MIT License
+ *
+ * http://opensource.org/licenses/mit-license.php
+ */
+
 package com.example.MemoInOfuton;
 
 import android.app.Activity;
