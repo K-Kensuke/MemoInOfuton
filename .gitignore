@@ -9,9 +9,9 @@
 *.class
 
 # generated files
-#bin/
-#gen/
-#build/
+bin/
+gen/
+build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -23,12 +23,12 @@ local.properties
 .idea/
 
 # Ignore gradle files
-#.gradle/
-#gradle/
-#gradle.properties
-#gradlew
-#gradlew.bat
-#settings.gradle
-#build.gradle
+.gradle/
+gradle/
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle
+build.gradle
 
-#proguard-rules.txt
+proguard-rules.txt
