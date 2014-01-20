@@ -16,6 +16,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+/**
+ * メインアクティビティ
+ */
 public class MyActivity extends Activity
 	{
 		// デバッグ用タグ
