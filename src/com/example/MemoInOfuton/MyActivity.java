@@ -29,6 +29,7 @@ public class MyActivity extends Activity
 
 		// どのIntentからstartActivityForResultが呼び出されたのかを判断するため
 		private static final int REQUEST_CODE = 1;
+		private static final int RECEIVE_MEMO_CODE = 2;
 
 		/**
 		 * Called when the activity is first created.
@@ -79,6 +80,12 @@ public class MyActivity extends Activity
 								if (results.get(i) == COMMAND_START)
 									{
 										Log.d(TAG, "COMMAND");
+
+										// TODO スタートコマンドを受け取ったら，別のプロセスIDで再度音声入力アクティビティを実行する
+										Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+										intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+										startActivityForResult(intent, RECEIVE_MEMO_CODE);
+
 										break;
 									}
 								else if (results.get(i) == COMMAND_EXIT)
@@ -87,6 +94,18 @@ public class MyActivity extends Activity
 										break;
 									}
 							}
+
+						// コマンド文字列が入力されなかった場合
+						// 音声入力をさせる
+						Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+						intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+						startActivityForResult(intent, REQUEST_CODE);
+					}
+				else if ((requestCode == RECEIVE_MEMO_CODE) && (resultCode == RESULT_OK))
+					{
+						ArrayList<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+
+						// TODO メモして，再度REQUEST_CODEで音声入力アクティビティを実行する
 					}
 			}
 
