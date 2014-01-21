@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -40,7 +42,17 @@ public class MyActivity extends Activity
 				super.onCreate(savedInstanceState);
 				setContentView(R.layout.main);
 
-				recognizer();
+				Button recognizerButton = (Button) findViewById(R.id.recognizer);
+				recognizerButton.setOnClickListener(new View.OnClickListener()
+				{
+					@Override
+					public void onClick (View v)
+						{
+							recognizer();
+						}
+				});
+
+
 			}
 
 
@@ -106,7 +118,19 @@ public class MyActivity extends Activity
 						ArrayList<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
 						// TODO メモして，再度REQUEST_CODEで音声入力アクティビティを実行する
+						if (!WriteData.writeDataToSdCard(getPackageName(), "RecordData.dat", results.get(0)))
+							{
+								Log.e(TAG, "Error while output data");
+								return;
+							}
+
+						Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+						intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+						startActivityForResult(intent, REQUEST_CODE);
+					}
+				else
+					{
+						Log.e(TAG, "Error while starting RecognizerActivity");
 					}
 			}
-
 	}

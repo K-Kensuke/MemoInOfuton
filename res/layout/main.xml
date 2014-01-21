@@ -16,16 +16,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_memo"
-            android:id="@+id/button"
+            android:id="@+id/recognizer"
             android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
             android:layout_marginLeft="50dp" android:layout_marginBottom="100dp"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/memo_list"
-            android:id="@+id/button2"
+            android:id="@+id/memolist"
             android:layout_marginRight="50dp"
-            android:layout_alignTop="@+id/button" android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/recognizer" android:layout_alignParentRight="true"
             android:layout_marginBottom="100dp"/>
     <TextView
             android:layout_width="wrap_content"
