@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -40,6 +41,9 @@ public class MyActivity extends Activity
 		public void onCreate (Bundle savedInstanceState)
 			{
 				super.onCreate(savedInstanceState);
+
+				// タイトルバーの非表示
+				requestWindowFeature(Window.FEATURE_NO_TITLE);
 				setContentView(R.layout.main);
 
 				Button recognizerButton = (Button) findViewById(R.id.recognizer);
